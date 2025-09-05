@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  overflow: hidden; /* tránh cuộn, chỉ hiển thị slide */
+}
+
+.slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.slide.active {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* đoạn giới thiệu ngắn (~17-18 chữ 1 dòng) */
+.intro {
+  max-width: 45ch;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-align: justify;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* đoạn văn chính có ảnh (~10 chữ 1 dòng) */
+.content p {
+  max-width: 45ch;             /* Giới hạn chiều rộng (≈ 17–18 chữ/dòng) */
+  line-height: 1.6;
+  text-align: justify;
+  white-space: normal;         /* Cho phép xuống dòng tự nhiên */
+  word-wrap: break-word;       /* Ngắt từ khi quá dài */
+  overflow-wrap: break-word;   /* Ngắt cả những chuỗi ký tự rất dài */
+}
+
+/* ảnh chen trái */
+.content img {
+  float: left;
+  margin: 0.5rem 1rem 1rem 0;
+  max-width: 200px;
+  height: auto;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* hiệu ứng khi hiển thị */
+.show-text {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.show-image {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
