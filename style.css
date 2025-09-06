@@ -113,4 +113,59 @@ h3{
 }
 .content_van_ban_2{
   border: 2px solid rgba(255, 0, 0, 0.5);
+}
+/* Chỉ áp dụng cho tablet: min 768px, max 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    overflow-y: auto; /* cho phép cuộn dọc nếu nội dung dài */
+    background: grey;
+  }
+
+  .slide {
+    height: auto;          /* bỏ full 100vh để nội dung gọn */
+    padding: 1.5vw;        /* giảm padding */
+    align-items: stretch;  /* bám sát full ngang */
+    justify-content: flex-start;
+  }
+
+  h1 {
+    font-size: 3vw; 
+    margin: 1vh 0;
+  }
+
+  h2, h2 strong {
+    font-size: 2.5vw;
+    margin: 0.5vh 0;
+  }
+
+  h3 {
+    font-size: 2vw;
+    margin: 0.5vh 0;
+  }
+
+  .content {
+    width: 100%;           /* full ngang */
+    padding: 1.5vw;
+    border-width: 0.2vw;
+    margin: 0;             /* bỏ margin thừa */
+    border-radius: 1vw;
+  }
+
+  .intro {
+    font-size: 2.5vw;      /* chữ nhỏ lại, gọn */
+    line-height: 1.4;
+    margin-bottom: 0.5vh;
+  }
+
+  .content p {
+    font-size: 1.8vw;      /* chữ nội dung vừa */
+    line-height: 1.5;
+    max-width: 100%;       /* full ngang */
+  }
+
+  .content img {
+    max-width: 45vw;       /* ảnh gọn, không chiếm quá nhiều */
+    margin: 0.5vh 1vw 0.5vh 0;
+    float: left;
+  }
   }
