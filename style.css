@@ -6,13 +6,14 @@ body {
   overflow: hidden; /* tránh cuộn, chỉ hiển thị slide */
 }
 
+/* Slide full màn hình */
 .slide {
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  padding: 2rem;
+  padding: 3vw; /* tăng padding theo viewport */
   box-sizing: border-box;
 }
 
@@ -20,44 +21,43 @@ body {
   display: flex;
 }
 
+/* Tiêu đề */
 h1 {
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
+  margin-bottom: 3vh;
+  font-size: 5vw; /* chữ rất to trên PC */
 }
 
 /* đoạn giới thiệu ngắn (~17-18 chữ 1 dòng) */
 .intro {
-  max-width: 45ch;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  max-width: 80ch;           /* rộng hơn: chiếm nhiều chữ hơn */
+  margin-bottom: 1vh;
+  line-height: 1.8;
   text-align: justify;
+  font-size: 5vh;          /* chữ to hơn */
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  color: blue;
+  font-weight: 900;
 }
 
-/* đoạn văn chính có ảnh (~10 chữ 1 dòng) */
+/* đoạn văn chính (~10 chữ 1 dòng) */
 .content p {
-  max-width: 45ch;             /* Giới hạn chiều rộng (≈ 17–18 chữ/dòng) */
-  line-height: 1.6;
+  max-width: 75ch;           /* mở rộng thêm chiều ngang */
+  line-height: 1.8;
   text-align: justify;
-  white-space: normal;         /* Cho phép xuống dòng tự nhiên */
-  word-wrap: break-word;       /* Ngắt từ khi quá dài */
+  white-space: normal;
+  word-wrap: break-word;
   overflow-wrap: break-word;
-  background: linear-gradient(
-    90deg,
-    violet,
-    greenyellow,
-    yellow,
-    cyan,
-    orange
-  );
+  font-size: 2.8vw;          /* chữ to hơn */
+
+  /* Gradient chữ */
+  background: linear-gradient(90deg, violet, greenyellow, yellow, cyan, orange);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Hiệu ứng chuyển động */
   animation: rainbow 50s linear infinite;
 }
 
@@ -70,16 +70,16 @@ h1 {
 /* ảnh chen trái */
 .content img {
   float: left;
-  margin: 0.5rem 1rem 1rem 0;
-  max-width: 220px;
+  margin: 1vh 2vw 1vh 0;
+  max-width: 68vw;   /* ảnh to hơn, gần nửa màn hình */
   height: auto;
-  border-radius: 6px;
+  border-radius: 10px;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }  
 
-/* hiệu ứng khi hiển thị */
+/* hiệu ứng hiển thị */
 .show-text {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -89,18 +89,28 @@ h1 {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
-.content .intro{
-  color: blue;
-  font-weight: 1000;
-}
-h2 strong{
+
+h2 strong {
   color: cyan;
+  font-size: 4vw;
 }
-.content{
-  background: rgba(128 ,128 ,128 ,1);
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: 2px solid cyan;
-  border-radius: 20px;
+h2{
+  font-size: 4vw;
+}
+
+.content {
+  background: rgba(128,128,128,0.9);
+  padding: 3vw;
+  border: 0.4vw solid cyan;  /* viền to hơn */
+  border-radius: 2vw;
+  width: 90vw;               /* container gần chạm viền màn hình */
+}
+h3{
+  font-size: 4vw;
+}
+.van_ban_2 strong{
+  color: rgba(255, 0, 0,1);
+}
+.content_van_ban_2{
+  border: 2px solid rgba(255, 0, 0, 0.5);
   }
