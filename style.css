@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background: grey;
   overflow: hidden; /* tránh cuộn, chỉ hiển thị slide */
 }
 
@@ -44,20 +44,40 @@ h1 {
   text-align: justify;
   white-space: normal;         /* Cho phép xuống dòng tự nhiên */
   word-wrap: break-word;       /* Ngắt từ khi quá dài */
-  overflow-wrap: break-word;   /* Ngắt cả những chuỗi ký tự rất dài */
+  overflow-wrap: break-word;
+  background: linear-gradient(
+    90deg,
+    violet,
+    greenyellow,
+    yellow,
+    cyan,
+    orange
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Hiệu ứng chuyển động */
+  animation: rainbow 50s linear infinite;
+}
+
+@keyframes rainbow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ảnh chen trái */
 .content img {
   float: left;
   margin: 0.5rem 1rem 1rem 0;
-  max-width: 200px;
+  max-width: 220px;
   height: auto;
   border-radius: 6px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-}
+}  
 
 /* hiệu ứng khi hiển thị */
 .show-text {
@@ -69,3 +89,18 @@ h1 {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+.content .intro{
+  color: blue;
+  font-weight: 1000;
+}
+h2 strong{
+  color: cyan;
+}
+.content{
+  background: rgba(128 ,128 ,128 ,1);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px solid cyan;
+  border-radius: 20px;
+  }
